@@ -40,7 +40,7 @@ public:
 extern fclass NVP;
 
 //Global NVP variables
-extern char *RFQ;  // rain frequency
-extern char *RPW;  // rain pulse width
+extern char RFQ[MAX_KV_LEN];  // rain frequency
+extern char RPW[MAX_KV_LEN];  // rain pulse width
 
 #endif
