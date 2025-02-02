@@ -1,8 +1,8 @@
 #include "Arduino.h"
 #include "NVP_Parser.h"
 
-char[MAX_KV_LEN] RFQ;
-char[MAX_KV_LEN] RPW;
+char RFQ[MAX_KV_LEN];
+char RPW[MAX_KV_LEN];
 
 void fclass::NVPparser(String NVP_Input) {
 
