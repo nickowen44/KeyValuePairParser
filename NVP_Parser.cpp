@@ -1,8 +1,8 @@
 #include "Arduino.h"
 #include "NVP_Parser.h"
 
-char* RFQ;
-char* RPW;
+char[MAX_KV_LEN] RFQ;
+char[MAX_KV_LEN] RPW;
 
 void fclass::NVPparser(String NVP_Input) {
 
@@ -38,8 +38,12 @@ void fclass::NVPparser(String NVP_Input) {
   for (int i = 0; i < kv_count; i++) {
     //printf("Key: %s, Value: %s\n", pairs[i].key, pairs[i].value);
 
-    if (!strcmp(pairs[i].key, "RFQ")) { RFQ = pairs[i].value; }
-    if (!strcmp(pairs[i].key, "RPW")) { RPW = pairs[i].value; }
+    if (!strcmp(pairs[i].key, "RFQ")) {
+      strncpy(RFQ, pairs[i].value, MAX_KV_LEN);
+    }
+    if (!strcmp(pairs[i].key, "RPW")) {
+      strncpy(RPW, pairs[i].value, MAX_KV_LEN);
+    }
   }
 
   // String myString = String(pairs[1].value);
